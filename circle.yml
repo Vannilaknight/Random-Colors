@@ -1,0 +1,19 @@
+machine:
+  timezone:
+    America/Denver
+  node:
+    version: 4
+
+deployment:
+  staging:
+    branch: master
+    codedeploy:
+      automationTest:
+        application_root: /
+        region: us-west-2
+        revision_location:
+          revision_type: S3
+          s3_location:
+            bucket: automationtest
+            key_pattern: automationTest-{BRANCH}-{SHORT_COMMIT}
+        deployment_group: automationTest-dg
