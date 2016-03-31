@@ -15,5 +15,5 @@ deployment:
           revision_type: S3
           s3_location:
             bucket: tay-bucket-color
-            key_pattern: {BUILD_NUM}-random-colors-{BRANCH}-{SHORT_COMMIT}
+            key_pattern: random-colors-{BRANCH}-{SHORT_COMMIT}
         deployment_group: random-colors-deploy
