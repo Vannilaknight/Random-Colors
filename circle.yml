@@ -8,12 +8,12 @@ deployment:
   staging:
     branch: master
     codedeploy:
-      Random-Colors:
+      random-colors:
         application_root: /
         region: us-west-2
         revision_location:
           revision_type: S3
           s3_location:
             bucket: tay-bucket-color
-            key_pattern: Random-Colors-{BRANCH}-{SHORT_COMMIT}
+            key_pattern: random-rolors-{BRANCH}-{SHORT_COMMIT}
         deployment_group: random-colors-deploy
