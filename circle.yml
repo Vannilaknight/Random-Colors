@@ -2,7 +2,7 @@ machine:
   timezone:
     America/Denver
   node:
-    version: 4
+    version: 5
 
 deployment:
   staging:
@@ -10,7 +10,7 @@ deployment:
     codedeploy:
       Random-Colors:
         application_root: /
-        region: Oregon
+        region: use-west-2
         revision_location:
           revision_type: S3
           s3_location:
