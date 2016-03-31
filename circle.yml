@@ -1,6 +1,6 @@
 machine:
   timezone:
-    America/Denver
+    America/Salt Lake City
   node:
     version: 5
 
@@ -14,6 +14,6 @@ deployment:
         revision_location:
           revision_type: S3
           s3_location:
-            bucket: tay-bucket-two
+            bucket: tay-bucket-color
             key_pattern: Random-Colors-{BRANCH}-{SHORT_COMMIT}
-        deployment_group: tay-deploy-two-dg
+        deployment_group: random-colors-deploy
