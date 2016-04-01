@@ -10,6 +10,8 @@
 cd ~/.ssh/
 ls -alFG --color
 
+cat id_random_colors_box
+
 #AUTH=~/.ssh/id_random_colors_box
 #
 #DIR="$( cd "$( dirname "$0" )" && pwd )"
