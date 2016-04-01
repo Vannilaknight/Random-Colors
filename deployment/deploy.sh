@@ -10,7 +10,7 @@
 cd ~/.ssh/
 ls -alFG --color
 
-cat id_random_colors_box
+cat id_random-colors-box
 
 #AUTH=~/.ssh/id_random_colors_box
 #
