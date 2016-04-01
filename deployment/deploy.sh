@@ -7,9 +7,7 @@
 #send files to directory
 #execute node stuff
 
-
-cd ~/.ssh/
-ls -alFG
+ssh -i ~/.ssh/id_random_colors_box ubuntu@ec2-54-200-138-217.us-west-2.compute.amazonaws.com "echo testing key"
 
 
 #DIR="$( cd "$( dirname "$0" )" && pwd )"
