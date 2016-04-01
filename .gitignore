@@ -1,3 +1,4 @@
 .idea/
 node_modules/
-automation.pem
+deployment/automation.pem
+project.tar.gz

@@ -1,5 +1,5 @@
 var colors = require('colors');
 
 setInterval(function(){
-    console.log('logging random colors'.random);
+    console.log('Changing it up son'.random);
 }, 1000)
