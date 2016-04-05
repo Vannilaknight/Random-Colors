@@ -13,12 +13,12 @@ DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 cd $DIR && cd ..
 
-scp -i deployment/automation.pem $DIR/setup.sh ubuntu@ec2-54-200-138-217.us-west-2.compute.amazonaws.com:~/
+scp -i ~/.ssh/id_ec2-54-213-140-152.us-west-2.compute.amazonaws.com $DIR/setup.sh ubuntu@ec2-54-213-140-152.us-west-2.compute.amazonaws.com:~/
 
-ssh -i deployment/automation.pem ubuntu@ec2-54-200-138-217.us-west-2.compute.amazonaws.com "chmod +x setup.sh && sh setup.sh"
+ssh -i ~/.ssh/id_ec2-54-213-140-152.us-west-2.compute.amazonaws.com ubuntu@ec2-54-213-140-152.us-west-2.compute.amazonaws.com "chmod +x setup.sh && sh setup.sh"
 
 tar -czvf project.tar.gz --exclude=node_modules/  --exclude=.git/ --exclude=.DS_Store --exclude=.idea/ .
 
-scp -i deployment/automation.pem project.tar.gz ubuntu@ec2-54-200-138-217.us-west-2.compute.amazonaws.com:~/deployment
+scp -i ~/.ssh/id_ec2-54-213-140-152.us-west-2.compute.amazonaws.com project.tar.gz ubuntu@ec2-54-213-140-152.us-west-2.compute.amazonaws.com:~/deployment
 
-ssh -i deployment/automation.pem ubuntu@ec2-54-200-138-217.us-west-2.compute.amazonaws.com 'bash -s' < $DIR/runNode.sh
+ssh -i ~/.ssh/id_ec2-54-213-140-152.us-west-2.compute.amazonaws.com ubuntu@ec2-54-213-140-152.us-west-2.compute.amazonaws.com 'bash -s' < $DIR/runNode.sh

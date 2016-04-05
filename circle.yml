@@ -1,13 +1,15 @@
 deployment:
   staging:
     branch: master
-    codedeploy:
-      random-color-app:
-        application_root: /
-        region: us-west-2
-        revision_location:
-          revision_type: S3
-          s3_location:
-            bucket: tay-bucket-color
-            key_pattern: random-colors-ulibarri-{BRANCH}-{SHORT_COMMIT}
-        deployment_group: random-colors-ulibarri-deploy
+      commands:
+        - ./deployment/deploy.sh
+#    codedeploy:
+#      random-color-app:
+#        application_root: /
+#        region: us-west-2
+#        revision_location:
+#          revision_type: S3
+#          s3_location:
+#            bucket: tay-bucket-color
+#            key_pattern: random-colors-ulibarri-{BRANCH}-{SHORT_COMMIT}
+#        deployment_group: random-colors-ulibarri-deploy
