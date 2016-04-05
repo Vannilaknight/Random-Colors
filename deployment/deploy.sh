@@ -17,7 +17,7 @@ scp -i ~/.ssh/id_ec2-54-213-140-152.us-west-2.compute.amazonaws.com $DIR/setup.s
 
 ssh -i ~/.ssh/id_ec2-54-213-140-152.us-west-2.compute.amazonaws.com ubuntu@ec2-54-213-140-152.us-west-2.compute.amazonaws.com "chmod +x setup.sh && sh setup.sh"
 
-tar -czvf project.tar.gz --exclude=node_modules/  --exclude=.git/ --exclude=.DS_Store --exclude=.idea/ .
+tar -czvf project.tar.gz --exclude=./node_modules/  --exclude=./.git/ --exclude=./.DS_Store --exclude=./.idea/ .
 
 scp -i ~/.ssh/id_ec2-54-213-140-152.us-west-2.compute.amazonaws.com project.tar.gz ubuntu@ec2-54-213-140-152.us-west-2.compute.amazonaws.com:~/deployment
 
