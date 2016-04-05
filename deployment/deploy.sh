@@ -7,16 +7,18 @@
 #send files to directory
 #execute node stuff
 
-AUTH=~/.ssh/id_random-colors-box
+
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
-scp -i $AUTH $DIR/setup.sh ubuntu@ec2-54-200-138-217.us-west-2.compute.amazonaws.com:~/
+cd $DIR && cd ..
 
-ssh -i $AUTH ubuntu@ec2-54-200-138-217.us-west-2.compute.amazonaws.com "chmod +x setup.sh && sh setup.sh"
+scp -i deployment/automation.pem $DIR/setup.sh ubuntu@ec2-54-200-138-217.us-west-2.compute.amazonaws.com:~/
+
+ssh -i deployment/automation.pem ubuntu@ec2-54-200-138-217.us-west-2.compute.amazonaws.com "chmod +x setup.sh && sh setup.sh"
 
 tar -czvf project.tar.gz --exclude=node_modules/  --exclude=.git/ --exclude=.DS_Store --exclude=.idea/ .
 
-scp -i $AUTH project.tar.gz ubuntu@ec2-54-200-138-217.us-west-2.compute.amazonaws.com:~/deployment
+scp -i deployment/automation.pem project.tar.gz ubuntu@ec2-54-200-138-217.us-west-2.compute.amazonaws.com:~/deployment
 
-ssh -i $AUTH ubuntu@ec2-54-200-138-217.us-west-2.compute.amazonaws.com 'bash -s' < $DIR/runNode.sh
+ssh -i deployment/automation.pem ubuntu@ec2-54-200-138-217.us-west-2.compute.amazonaws.com 'bash -s' < $DIR/runNode.sh
