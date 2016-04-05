@@ -1,0 +1,21 @@
+extends ../includes/layout
+
+block main-content
+    .navbar.navbar-default.navbar-fixed-top
+        .container
+            .navbar-header
+                a.navbar-brand(href="/") Players: 6
+                    h6 -How many Players? 6
+            .navbar-collapse.collapse
+                ul.nav.navbar-nav
+                    li.highlightTextIn
+                        a(href="/") Home
+                    li.highlightTextIn
+                        a(href="/players") Players
+                div(ng-include="'/partials/account/navbar-login'")
+
+    section.content
+        div(ng-view)
+
+    footer.container.text-center
+        p &copy; 2016 Players: 6
