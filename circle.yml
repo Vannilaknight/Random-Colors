@@ -1,8 +1,8 @@
 deployment:
   staging:
     branch: master
-      commands:
-        - ./deployment/deploy.sh
+    commands:
+      - ./deployment/deploy.sh
 #    codedeploy:
 #      random-color-app:
 #        application_root: /
