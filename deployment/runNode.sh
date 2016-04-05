@@ -17,4 +17,4 @@ tar -xvf project.tar.gz
 
 npm install
 forever stopall
-forever start index.js --color
+forever start server.js --color
