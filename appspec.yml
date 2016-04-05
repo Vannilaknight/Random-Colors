@@ -3,3 +3,10 @@ os: linux
 files:
   - source: source
     destination: /deployment
+permissions:
+  - object: /
+      pattern: "**"
+      owner: ubuntu
+      mode: 777
+      type:
+        - file
